@@ -1,22 +1,22 @@
 # MEU_COREGUARD (Node v1)
 
-MEU_COREGUARD je experimentální implementace hardwarově akcelerovaného hybridního spínaného řídicího systému. Projekt slouží jako výzkumný prototyp pro verifikaci stability nelineárních systémů v reálném čase.
+MEU_COREGUARD is an experimental implementation of a hardware-accelerated hybrid switched control system. The project serves as a research prototype for real-time stability verification of non-linear systems.
 
-## Technická specifikace
-Jádro systému je postaveno na virtuálním stroji (SCIR-VM v1) s integrovanou dohledovou vrstvou (Supervisor), která zajišťuje bezpečnostní bariéry v souladu s metodikou Ljapunovovy stability.
+## Technical Specification
+The system core is built on a bytecode-driven virtual machine (SCIR-VM v1) with an integrated supervisory layer (Supervisor) that ensures safety barriers in compliance with Lyapunov stability methodology.
 
-* **Architektura:** Switched LQR Coprocessor
-* **Bezpečnostní limity:**
-    * W_max: 60 (Saturační mez)
-    * W_min: 5 (Havarijní práh)
-    * tau_d: 6 taktů (Zeno Inhibition)
+* **Architecture:** Switched LQR Coprocessor
+* **Safety Envelopes:**
+    * W_max: 60 (Saturation limit)
+    * W_min: 5 (Emergency threshold)
+    * tau_d: 6 clock cycles (Zeno Inhibition)
 
-## Struktura projektu
-- `test_coreguard_vm.py`: Hlavní verifikační model (Golden Model).
-- `COREGUARD_VISUAL_DEMO.html`: Interaktivní inženýrský demonstrátor pro vizuální validaci.
-- `test_stress_validation.py`: Protokol zátěžových testů (Fuzzing, Zeno-Storm).
+## Project Structure
+- `test_coreguard_vm.py`: Core verification model (Golden Model).
+- `COREGUARD_VISUAL_DEMO.html`: Interactive engineering demonstrator for visual validation.
+- `test_stress_validation.py`: Stress testing protocol (Fuzzing, Zeno-Storm).
 
-## Verifikace
-Systém je plně validován pomocí rámce `pytest`. Pro spuštění kompletní sady testů:
+## Verification
+The system is fully validated using the `pytest` framework. To execute the complete test suite, run:
 ```bash
 pytest -s
