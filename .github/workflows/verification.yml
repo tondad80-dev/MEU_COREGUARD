@@ -1,0 +1,29 @@
+name: CoreGuard Verification Suite
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository code
+      uses: actions/checkout@v4
+
+    - name: Set up Python environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install verification dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest
+
+    - name: Execute Safety-Critical Test Suite
+      run: |
+        pytest -s
