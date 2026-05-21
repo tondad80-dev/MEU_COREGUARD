@@ -1,0 +1,31 @@
+=======================================================================
+               PRODUCT TECHNICAL DATASHEET: MEU-COREGUARD v1.0
+               High-Reliability Switched LQR Coprocessor Core
+=======================================================================
+
+1. SYSTÉMOVÁ ARCHITEKTURA
+-------------------------
+CoreGuard Node v1 je hardwarově akcelerovaný hybridní spínaný řídicí systém
+navržený pro uzel Node 00. Je implementován jako virtuální stroj řízený 
+bytecodem (SCIR-VM v1) s integrovanou dohledovou vrstvou (Supervisor).
+Tento popis představuje interní inženýrskou validaci výzkumného prototypu.
+
+2. HARDWAROVÉ HRANICE (SAFETY ENVELOPE - AS-IS)
+-----------------------------------------------------
+* Nominální váha chyb (W_nom):     15
+* Maximální saturační mez (W_max):  60
+* Minimální saturační mez (W_min):  5
+* Havarijní fallback (E-STOP):      4
+* Minimální doba setrvání (tau_d):  6 hodinových taktů (Zeno Inhibition)
+
+3. PARALELNÍ MATICOVÁ JEDNOTKA (MEU) & MATICE ZISKŮ
+---------------------------------------------------
+* REŽIM 0 (NOMINAL):  Zisky K_0 = [k1=2, k2=1]  -> Stabilní provoz
+* REŽIM 1 (POLICY):   Zisky K_1 = [k1=5, k2=2]  -> Agresivní konvergence
+* REŽIM 2 (DEADLOCK): Zisky K_2 = [k1=1, k2=4]  -> Absorpční útlum
+
+4. OMEZENÍ ODPOVĚDNOSTI
+-----------------------
+Poskytováno výhradně pro studijní a vývojové účely "tak, jak je" (AS-IS).
+Nenahrazuje oficiální certifikaci pro ostré průmyslové nasazení.
+=======================================================================

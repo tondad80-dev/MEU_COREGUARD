@@ -1,0 +1,22 @@
+=======================================================================
+             PROTOKOL O INTERNÍM FUNKČNÍM TESTOVÁNÍ (AS-IS)
+                (INTERNAL FUNCTIONAL VERIFICATION REPORT)
+=======================================================================
+Upozornění: Tento dokument popisuje chování inženýrského prototypu.
+Nejedná se o právně závaznou certifikaci ani záruku bezpečnosti.
+
+1. SOUHRN TESTŮ (TEST SUMMARY)
+------------------------------
+- TC_NOM_01: NOMINAL LQR PASSED
+- TC_HYST_02: HYSTERESIS GATE PASSED
+- TC_INTER_03: DEADLOCK INTERLOCK PASSED
+- TC_TRAP_04: LMI DIVERGENCE PASSED
+- V2_FUZZING: LMI BOUNDARY PASSED
+- V3_LATENCY: O(1) DETERMINISM PASSED
+- V4_HIL_STABILITY: JITTER ROBUSTNESS PASSED
+
+2. OMEZENÍ ODPOVĚDNOSTI (DISCLAIMER)
+------------------------------------
+Implementace je poskytována "TAK, JAK JSOU" (AS-IS) bez nároku 
+na funkční bezpečnost.
+=======================================================================
